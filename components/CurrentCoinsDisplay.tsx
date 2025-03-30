@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image } from "react-native"
-import { useEffect, useState } from "react"
+import { Colors } from "@/stylesColors"
 
 interface Props {
     currentCoins: number
@@ -43,11 +43,10 @@ export default function CurrentCoinsDisplay ({ currentCoins }: Props) {
 const styles = StyleSheet.create({
     currentCoins: {
         alignItems: 'center',
-        borderColor: 'yellow',
-        borderWidth: 2,
-        borderRadius: 2,
+        borderRadius: 10,
         margin: 35,
         padding: 20,
+        backgroundColor: Colors.burgundyDeep,
     },
     currentCoinsText: {
         color: 'white',

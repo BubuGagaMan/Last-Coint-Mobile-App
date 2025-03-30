@@ -1,10 +1,6 @@
 import { Text, View, Pressable, StyleSheet, Alert } from "react-native"
 
-import PrimaryButton from "@/components/PrimaryButton"
-
-import { inputBackgroundColor } from "@/stylesColors"
-
-import { useState } from "react"
+import { Colors } from "@/stylesColors"
 
 interface Props {
     playerWon: Boolean
@@ -16,7 +12,7 @@ export default function GameOverScreen({ playerWon, onReset }: Props) {
 
     return (
         <View style={{flex: 1, justifyContent: 'center', gap: 20}}>
-            <Text style={{textAlign: 'center'}}>GAME OVER</Text>
+            <Text style={{textAlign: 'center', color: 'white', fontSize: 32}}>GAME OVER</Text>
             <Pressable onPress={onReset} >
                 <View style={styles.resetBtn}>
                     <Text style={{textAlign: 'center'}}>RESET</Text>
@@ -29,11 +25,12 @@ export default function GameOverScreen({ playerWon, onReset }: Props) {
 const styles = StyleSheet.create({
     resetBtn: {
         borderWidth: 2,
-        borderColor: 'red',
+        borderColor: Colors.redPrimary,
+        borderRadius: 15,
 
         padding: 10,
         width: '75%',
         margin: 'auto',
-        backgroundColor: 'green'
+        backgroundColor: Colors.burgundyMedium
     }
 })

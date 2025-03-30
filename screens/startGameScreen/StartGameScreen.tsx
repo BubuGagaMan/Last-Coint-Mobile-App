@@ -2,9 +2,9 @@ import { TextInput, View, Pressable, StyleSheet, Alert, Text } from "react-nativ
 
 import PrimaryButton from "@/components/PrimaryButton"
 
-import { inputBackgroundColor } from "@/stylesColors"
-
 import { useState } from "react"
+
+import { Colors } from "@/stylesColors"
 
 interface Props {
     onPickedNumber: (pickedNum: number) => void
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         padding: 16,
         marginTop: 100,
         marginHorizontal: 24,
-        backgroundColor: inputBackgroundColor,
+        backgroundColor: Colors.white,
         borderRadius: 15,
 
         elevation: 30, // android only

@@ -1,8 +1,8 @@
 import { Pressable, StyleSheet, View, Text, Image } from "react-native";
 
-import { primaryBtnColor } from "@/stylesColors";
+import { Colors } from "@/stylesColors";
 
-import { useEffect } from "react";
+
 
 interface Props {
     onPress: (num: number) => void
@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         flex: 1,
         borderWidth: 2,
-        borderColor: 'red',
+        borderColor: Colors.burgundyMedium,
         width: 50,
 
     },
     buttonInnerContainer: {
-        backgroundColor: primaryBtnColor,
+        backgroundColor: Colors.black,
         paddingVertical: 8,
         paddingHorizontal: 5,
         elevation: 2,

@@ -85,7 +85,7 @@ export default function GameScreen ({ coinsNumber, onChangePickedNumber, onGameE
 
 const styles = StyleSheet.create({
     baseViewContainer: {
-        backgroundColor: baseViewContainerColor,
+        // backgroundColor: baseViewContainerColor,
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-between'

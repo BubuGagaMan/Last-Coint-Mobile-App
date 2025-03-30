@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, View, Text } from "react-native";
 import { PropsWithChildren } from "react";
 
-import { primaryBtnColor } from "@/stylesColors";
+import { Colors } from "@/stylesColors";
 
 interface Props {
     onPress: () => void
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         //flex: 1
     },
     buttonInnerContainer: {
-        backgroundColor: primaryBtnColor,
+        backgroundColor: Colors.purpleHighSat,
         paddingVertical: 8,
         paddingHorizontal: 16,
         elevation: 2,

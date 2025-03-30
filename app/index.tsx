@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, ImageBackground, SafeAreaView } from "react-native";
+import { Text, View, StyleSheet, ImageBackground, SafeAreaView, Dimensions } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 
@@ -29,9 +29,9 @@ export default function Index() {
   }
 
   return (
-    <LinearGradient colors={['pink', 'blue']} style={styles.rootScreen}>
+    <LinearGradient colors={['#000000', '#8A2BE2']} style={styles.rootScreen}>
+              <ImageBackground imageStyle={styles.backgroundImage} resizeMode="cover" source={require('../assets/images/coins.png')} />
       <SafeAreaView style={styles.rootScreen}>
-        <ImageBackground imageStyle={styles.backgroundImage} resizeMode="repeat" source={require('../assets/images/coins.png')} />
 
         {pickedNumber && pickedNumber > 1 ? <GameScreen onGameEnd={onGameEnd} coinsNumber={pickedNumber} onChangePickedNumber={onPickedNumber}/> 
         : playerWon !== undefined ? <GameOverScreen onReset={resetGame} playerWon={playerWon}/>
@@ -41,12 +41,23 @@ export default function Index() {
   );
 }
 
+const { height } = Dimensions.get('window')
+
 
 const styles = StyleSheet.create({
   rootScreen: {
     flex: 1
   },
   backgroundImage: {
-    opacity: 1
-  }
+    flex: 1,
+    opacity: 0.1,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    height: height,
+    borderWidth: 1,
+    padding: 0
+  },
+
 })
