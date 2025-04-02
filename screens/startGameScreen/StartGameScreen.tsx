@@ -40,7 +40,13 @@ export default function StartGameScreen({ onPickedNumber }: Props) {
     }
     return (
         <View style={styles.inputContainer}>
-            <Text style={{textAlign: 'center'}}>Set Starting Coins</Text>
+            <Text style={styles.titleStyle}>Last Coin</Text>
+            <View>
+                <Text style={styles.startingText}>This is a turn based game, in which, each player can take 1-3 coins each turn.</Text>
+                <Text style={styles.startingText}>The game starts with a set number of coins and ends when all coins run out.</Text>
+                <Text style={styles.startingText}>The player who takes the last coin loses.</Text>
+                <Text style={[styles.startingText, {fontSize: 22, marginTop: 20}]} >Set Starting Coins</Text>
+            </View>
             <TextInput 
                 style={styles.textInput} 
                 maxLength={2} 
@@ -61,12 +67,23 @@ export default function StartGameScreen({ onPickedNumber }: Props) {
 }
 
 const styles = StyleSheet.create({
+    titleStyle: {
+        textAlign: 'center',
+        fontSize: 28,
+        fontFamily: 'bad-pattern-name-1'
+    },
     inputContainer: {
+        // responsiveness
+        minWidth: '50%',
+        width: 350,
+        maxWidth: '80%',
+        
+
         gap: 5,
         //flex: 1,
         padding: 16,
         marginTop: 100,
-        marginHorizontal: 24,
+        marginHorizontal: 'auto',
         backgroundColor: Colors.white,
         borderRadius: 15,
 
@@ -98,5 +115,11 @@ const styles = StyleSheet.create({
     // use flex 1 with a wrapper instead of on the button styles to keep styling flexibility
     buttonWrapper: {
         flex: 1
+    },
+    startingText: {
+        textAlign:'center',
+        margin: 5,
+        fontSize: 16,
+        fontFamily: 'bad-pattern-name-2',
     }
 })

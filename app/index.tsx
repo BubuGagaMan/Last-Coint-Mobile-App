@@ -8,7 +8,18 @@ import StartGameScreen from "@/screens/startGameScreen/StartGameScreen";
 import GameScreen from "@/screens/gameScreen/GameScreen";
 import GameOverScreen from "@/screens/gameOverScreen/GameOverScreen";
 
+import { useFonts } from "expo-font";
+import * as SplashScreen from 'expo-splash-screen'
+import { useEffect } from "react";
+
 export default function Index() {
+
+  const [loaded, error] = useFonts({
+    'bad-pattern-name-1': require('@/assets/fonts/Play-Regular.ttf'),
+    'bad-pattern-name-2': require('@/assets/fonts/SyneMono-Regular.ttf'),
+
+  })
+
 
   const [pickedNumber, setPickedNumber] = useState<number | undefined>(undefined)
 
@@ -26,6 +37,16 @@ export default function Index() {
 
   const onGameEnd = (endOutcome: boolean) => {
     setPlayerWon(endOutcome)
+  }
+
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  if (!loaded && !error) {
+    return null;
   }
 
   return (
